@@ -3,6 +3,8 @@ import 'package:logic/screens/image_select.dart';
 import 'package:logic/screens/single_selection.dart';
 import 'package:logic/screens/toggle_selection.dart';
 
+import 'screens/multi_selection.dart';
+
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
 
@@ -16,13 +18,14 @@ class _RootScreenState extends State<RootScreen> {
     SingleSelection(),
     ImageSelect(),
     ToggleSelection(),
+    MultiSelection(),
 
   ];
   int selectedIndex=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white,
       body: PageView(
         controller: controller,
         children: screens,

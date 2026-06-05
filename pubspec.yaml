@@ -27,6 +27,7 @@ flutter:
   assets:
     - assets/animals/
     - assets/laptop/
+    - assets/images/
 
 
   # To add custom fonts to your application, add a fonts section here,
