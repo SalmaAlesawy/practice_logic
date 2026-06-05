@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logic/screens/multi_image_select.dart';
+import 'package:logic/screens/image_select.dart';
 import 'package:logic/screens/single_selection.dart';
 import 'package:logic/screens/toggle_selection.dart';
 
@@ -14,8 +14,9 @@ class _RootScreenState extends State<RootScreen> {
   final PageController controller = PageController();
   List<Widget> screens = [
     SingleSelection(),
+    ImageSelect(),
     ToggleSelection(),
-    MultiImageSelect(),
+
   ];
   int selectedIndex=0;
   @override
