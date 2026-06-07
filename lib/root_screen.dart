@@ -3,6 +3,7 @@ import 'package:logic/screens/one/image_select.dart';
 import 'package:logic/screens/one/single_selection.dart';
 import 'package:logic/screens/one/toggle_selection.dart';
 import 'package:logic/screens/two/upload_image.dart';
+import 'package:logic/screens/two/upload_multi_images.dart';
 
 import 'screens/one/multi_selection.dart';
 
@@ -23,9 +24,10 @@ class _RootScreenState extends State<RootScreen> {
     MultiSelection(),
 
     ///Second Session
-     UploadImage()
+    UploadImage(),
+    UploadMultiImages(),
   ];
-  int selectedIndex=0;
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,13 +37,14 @@ class _RootScreenState extends State<RootScreen> {
         children: screens,
         onPageChanged: (value) {
           setState(() {
-            selectedIndex=value;
+            selectedIndex = value;
           });
         },
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),color: Colors.white
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 60),
@@ -50,8 +53,8 @@ class _RootScreenState extends State<RootScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap:(){
-                  controller.jumpToPage(selectedIndex-1);
+                onTap: () {
+                  controller.jumpToPage(selectedIndex - 1);
                 },
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -63,21 +66,18 @@ class _RootScreenState extends State<RootScreen> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 height: 40,
-                decoration: BoxDecoration(color: Colors.black,),
+                decoration: BoxDecoration(color: Colors.black),
 
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
-                      controller.jumpToPage(selectedIndex+1);
+                      controller.jumpToPage(selectedIndex + 1);
                     });
                   },
                   child: Row(
                     children: [
-                      Text(
-                        " Next page",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Icon(Icons.arrow_forward,color: Colors.white,),
+                      Text(" Next page", style: TextStyle(color: Colors.white)),
+                      Icon(Icons.arrow_forward, color: Colors.white),
                     ],
                   ),
                 ),
