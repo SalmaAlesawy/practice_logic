@@ -4,6 +4,7 @@ import 'package:logic/screens/one/single_selection.dart';
 import 'package:logic/screens/one/toggle_selection.dart';
 import 'package:logic/screens/two/upload_image.dart';
 import 'package:logic/screens/two/upload_multi_images.dart';
+import 'package:logic/screens/two/upload_video.dart';
 
 import 'screens/one/multi_selection.dart';
 
@@ -26,6 +27,7 @@ class _RootScreenState extends State<RootScreen> {
     ///Second Session
     UploadImage(),
     UploadMultiImages(),
+    UploadVideo()
   ];
   int selectedIndex = 0;
   @override
