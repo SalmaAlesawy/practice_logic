@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:logic/screens/image_select.dart';
-import 'package:logic/screens/single_selection.dart';
-import 'package:logic/screens/toggle_selection.dart';
+import 'package:logic/screens/one/image_select.dart';
+import 'package:logic/screens/one/single_selection.dart';
+import 'package:logic/screens/one/toggle_selection.dart';
+import 'package:logic/screens/two/upload_image.dart';
 
-import 'screens/multi_selection.dart';
+import 'screens/one/multi_selection.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
@@ -15,11 +16,14 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> {
   final PageController controller = PageController();
   List<Widget> screens = [
+    ///First Session
     SingleSelection(),
     ImageSelect(),
     ToggleSelection(),
     MultiSelection(),
 
+    ///Second Session
+     UploadImage()
   ];
   int selectedIndex=0;
   @override
